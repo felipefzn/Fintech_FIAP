@@ -1,6 +1,7 @@
 package com.mywebapp.model;
 
 import java.util.UUID;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class TbRecebimento {
@@ -8,8 +9,8 @@ public class TbRecebimento {
     private UUID idUsuario;
     private UUID idTipoRecebimento;
     private UUID idTipoPagamento;
-    private Date dthrRecebimento;
-    private float valorRecebimento;
+    private String dthrRecebimento;
+    private double valorRecebimento;
     private String documentoAnexado;
 
     // Getters e Setters
@@ -45,20 +46,20 @@ public class TbRecebimento {
         this.idTipoPagamento = idTipoPagamento;
     }
 
-    public Date getDthrRecebimento() {
+    public String getDthrRecebimento() {
         return dthrRecebimento;
     }
 
-    public void setDthrRecebimento(Date dthrRecebimento) {
-        this.dthrRecebimento = dthrRecebimento;
+    public void setDthrRecebimento(String dthrRecebimento2) {
+        this.dthrRecebimento = dthrRecebimento2;
     }
 
     public float getValorRecebimento() {
-        return valorRecebimento;
+        return (float) valorRecebimento;
     }
 
-    public void setValorRecebimento(float valorRecebimento) {
-        this.valorRecebimento = valorRecebimento;
+    public void setValorRecebimento(double valorRecebimento2) {
+        this.valorRecebimento = valorRecebimento2;
     }
 
     public String getDocumentoAnexado() {

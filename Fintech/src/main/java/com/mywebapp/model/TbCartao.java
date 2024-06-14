@@ -8,7 +8,7 @@ public class TbCartao {
     private UUID idUsuario;
     private String tipoCartao;
     private String numeroCartao;
-    private Date dataValidade;
+    private String dataValidade;
     private String cvv;
     private float limiteCredito;
     private float saldoDebito;
@@ -46,12 +46,12 @@ public class TbCartao {
         this.numeroCartao = numeroCartao;
     }
 
-    public Date getDataValidade() {
+    public String getDataValidade() {
         return dataValidade;
     }
 
-    public void setDataValidade(Date dataValidade) {
-        this.dataValidade = dataValidade;
+    public void setDataValidade(String dataValidade2) {
+        this.dataValidade = dataValidade2;
     }
 
     public String getCvv() {
@@ -66,15 +66,15 @@ public class TbCartao {
         return limiteCredito;
     }
 
-    public void setLimiteCredito(float limiteCredito) {
-        this.limiteCredito = limiteCredito;
+    public void setLimiteCredito(double limiteCredito2) {
+        this.limiteCredito = (float) limiteCredito2;
     }
 
     public float getSaldoDebito() {
         return saldoDebito;
     }
 
-    public void setSaldoDebito(float saldoDebito) {
-        this.saldoDebito = saldoDebito;
+    public void setSaldoDebito(double saldoDebito2) {
+        this.saldoDebito = (float) saldoDebito2;
     }
 }

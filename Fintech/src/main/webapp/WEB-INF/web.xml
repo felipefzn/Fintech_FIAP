@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   <display-name>Fintech</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.mywebapp.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>loginServlet</display-name>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.mywebapp.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RecebimentoServlet</display-name>
+    <servlet-name>RecebimentoServlet</servlet-name>
+    <servlet-class>com.mywebapp.servlet.RecebimentoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RecebimentoServlet</servlet-name>
+    <url-pattern>/Recebimento</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartoesServlet</display-name>
+    <servlet-name>CartoesServlet</servlet-name>
+    <servlet-class>com.mywebapp.servlet.CartoesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartoesServlet</servlet-name>
+    <url-pattern>/Cartoes</url-pattern>
+  </servlet-mapping>
 </web-app>

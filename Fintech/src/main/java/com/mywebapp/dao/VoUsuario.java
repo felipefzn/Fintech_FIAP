@@ -48,6 +48,29 @@ public class VoUsuario {
         }
         return null;
     }
+    
+    public TbUsuario findByEmail(String email) throws SQLException {
+        String sql = "SELECT * FROM Usuario WHERE email = ?";
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, email);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    TbUsuario usuario = new TbUsuario();
+                    usuario.setIdUsuario(UUID.fromString(rs.getString("IdUsuario")));
+                    usuario.setNome(rs.getString("nome"));
+                    usuario.setSobrenome(rs.getString("sobrenome"));
+                    usuario.setNumero(rs.getString("numero"));
+                    usuario.setCpf(rs.getString("cpf"));
+                    usuario.setRg(rs.getString("rg"));
+                    usuario.setEmail(rs.getString("email"));
+                    usuario.setPinSeguranca(rs.getString("pinSeguranca"));
+                    return usuario;
+                }
+            }
+        }
+        return null;
+    }
 
     public List<TbUsuario> findAll() throws SQLException {
         List<TbUsuario> usuarios = new ArrayList<>();

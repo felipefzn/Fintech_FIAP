@@ -18,7 +18,7 @@ public class VoRecebimento {
             pstmt.setObject(2, recebimento.getIdUsuario());
             pstmt.setObject(3, recebimento.getIdTipoRecebimento());
             pstmt.setObject(4, recebimento.getIdTipoPagamento());
-            pstmt.setTimestamp(5, new Timestamp(recebimento.getDthrRecebimento().getTime()));
+            pstmt.setString(5, recebimento.getDthrRecebimento());
             pstmt.setFloat(6, recebimento.getValorRecebimento());
             pstmt.setString(7, recebimento.getDocumentoAnexado());
             pstmt.executeUpdate();
@@ -37,7 +37,7 @@ public class VoRecebimento {
                     recebimento.setIdUsuario(UUID.fromString(rs.getString("IdUsuario")));
                     recebimento.setIdTipoRecebimento(UUID.fromString(rs.getString("IdTipoRecebimento")));
                     recebimento.setIdTipoPagamento(UUID.fromString(rs.getString("IdTipoPagamento")));
-                    recebimento.setDthrRecebimento(rs.getTimestamp("DthrRecebimento"));
+                    recebimento.setDthrRecebimento(rs.getString("DthrRecebimento"));
                     recebimento.setValorRecebimento(rs.getFloat("valorRecebimento"));
                     recebimento.setDocumentoAnexado(rs.getString("documentoAnexado"));
                     return recebimento;
@@ -59,7 +59,7 @@ public class VoRecebimento {
                 recebimento.setIdUsuario(UUID.fromString(rs.getString("IdUsuario")));
                 recebimento.setIdTipoRecebimento(UUID.fromString(rs.getString("IdTipoRecebimento")));
                 recebimento.setIdTipoPagamento(UUID.fromString(rs.getString("IdTipoPagamento")));
-                recebimento.setDthrRecebimento(rs.getTimestamp("DthrRecebimento"));
+                recebimento.setDthrRecebimento(rs.getString("DthrRecebimento"));
                 recebimento.setValorRecebimento(rs.getFloat("valorRecebimento"));
                 recebimento.setDocumentoAnexado(rs.getString("documentoAnexado"));
                 recebimentos.add(recebimento);
@@ -75,7 +75,7 @@ public class VoRecebimento {
             pstmt.setObject(1, recebimento.getIdUsuario());
             pstmt.setObject(2, recebimento.getIdTipoRecebimento());
             pstmt.setObject(3, recebimento.getIdTipoPagamento());
-            pstmt.setTimestamp(4, new Timestamp(recebimento.getDthrRecebimento().getTime()));
+            pstmt.setString(4, recebimento.getDthrRecebimento());
             pstmt.setFloat(5, recebimento.getValorRecebimento());
             pstmt.setString(6, recebimento.getDocumentoAnexado());
             pstmt.setObject(7, recebimento.getIdRecebimento());

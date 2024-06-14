@@ -18,7 +18,7 @@ public class VoCartao {
             pstmt.setObject(2, cartao.getIdUsuario());
             pstmt.setString(3, cartao.getTipoCartao());
             pstmt.setString(4, cartao.getNumeroCartao());
-            pstmt.setDate(5, new java.sql.Date(cartao.getDataValidade().getTime()));
+            pstmt.setString(5, cartao.getDataValidade());
             pstmt.setString(6, cartao.getCvv());
             pstmt.setFloat(7, cartao.getLimiteCredito());
             pstmt.setFloat(8, cartao.getSaldoDebito());
@@ -38,7 +38,7 @@ public class VoCartao {
                     cartao.setIdUsuario(UUID.fromString(rs.getString("IdUsuario")));
                     cartao.setTipoCartao(rs.getString("tipoCartao"));
                     cartao.setNumeroCartao(rs.getString("numeroCartao"));
-                    cartao.setDataValidade(rs.getDate("dataValidade"));
+                    cartao.setDataValidade(rs.getString("dataValidade"));
                     cartao.setCvv(rs.getString("cvv"));
                     cartao.setLimiteCredito(rs.getFloat("limiteCredito"));
                     cartao.setSaldoDebito(rs.getFloat("saldoDebito"));
@@ -61,7 +61,7 @@ public class VoCartao {
                 cartao.setIdUsuario(UUID.fromString(rs.getString("IdUsuario")));
                 cartao.setTipoCartao(rs.getString("tipoCartao"));
                 cartao.setNumeroCartao(rs.getString("numeroCartao"));
-                cartao.setDataValidade(rs.getDate("dataValidade"));
+                cartao.setDataValidade(rs.getString("dataValidade"));
                 cartao.setCvv(rs.getString("cvv"));
                 cartao.setLimiteCredito(rs.getFloat("limiteCredito"));
                 cartao.setSaldoDebito(rs.getFloat("saldoDebito"));
@@ -78,7 +78,7 @@ public class VoCartao {
             pstmt.setObject(1, cartao.getIdUsuario());
             pstmt.setString(2, cartao.getTipoCartao());
             pstmt.setString(3, cartao.getNumeroCartao());
-            pstmt.setDate(4, new java.sql.Date(cartao.getDataValidade().getTime()));
+            pstmt.setString(4, cartao.getDataValidade());
             pstmt.setString(5, cartao.getCvv());
             pstmt.setFloat(6, cartao.getLimiteCredito());
             pstmt.setFloat(7, cartao.getSaldoDebito());
